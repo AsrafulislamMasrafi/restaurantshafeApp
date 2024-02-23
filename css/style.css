@@ -399,11 +399,24 @@ nav .icon {
   }
 }
 
+.v {
+  grid-column: 1/-1;
+}
+
+.color {
+  color: #dcca87;
+}
+
 .containerImg {
-  background: url("../image/footer-img.jpg");
+  background: url("../image/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.w1 {
+  width: 2rem;
+  margin-top: 0.1rem;
 }
 
 .about {
@@ -558,13 +571,21 @@ nav .icon {
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   padding: 3rem;
+  gap: 3rem;
+}
+@media (max-width: 900px) {
+  .chefs {
+    grid-template-columns: 1fr;
+  }
+}
+.chefs .image {
+  width: 90%;
 }
 .chefs .wards {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1.7rem;
-  padding: 1rem;
 }
 .chefs .wards h1 {
   color: #dcca87;
@@ -573,15 +594,13 @@ nav .icon {
   display: flex;
   flex-direction: column;
 }
-.chefs .wards .chefsQuote .img {
-  display: flex;
-  gap: 0.3rem;
-  align-items: end;
-}
 .chefs .wards .chefsQuote p {
   line-height: 1.5;
   font-weight: 300;
   color: #d4d4d4;
+}
+.chefs .wards .chefsQuote p::first-letter {
+  font-size: 2rem;
 }
 .chefs .wards .chefsQuote img {
   width: 2rem;
@@ -600,5 +619,100 @@ nav .icon {
 @media (max-width: 768px) {
   .chefs {
     grid-template-columns: 1fr;
+  }
+}
+
+.video {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video video {
+  width: 100%;
+  cursor: pointer;
+}
+.video .play {
+  position: absolute;
+  width: 10%;
+  cursor: pointer;
+  height: 10%;
+}
+.video .play img {
+  width: 100%;
+  height: 100%;
+}
+
+.awards {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 2rem;
+}
+.awards .bite {
+  width: 5rem;
+}
+.awards .awardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.51rem;
+}
+.awards .awardText h1,
+.awards .awardText h4 {
+  color: #dcca87;
+}
+.awards .awardText h1 {
+  font-size: clamp(1.5rem, 5vw, 2.6rem);
+  margin-bottom: 2rem;
+}
+.awards .awardText p {
+  line-height: 1.5;
+  font-weight: 300;
+  color: #d4d4d4;
+}
+.awards .awardText .textContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+@media (max-width: 625px) {
+  .awards .awardText .textContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+.awards .awardText .textContainer img {
+  width: 4rem;
+  height: 4rem;
+}
+.awards .awardText .textContainer .text {
+  display: flex;
+  gap: 2rem;
+}
+.awards .imageContainer {
+  padding: 2rem;
+}
+.awards .imageContainer img {
+  width: 100%;
+}
+@media (max-width: 1277px) {
+  .awards {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .awards .awardText {
+    justify-content: center;
+    align-items: center;
+  }
+  .awards .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .awards .imageContainer img {
+    width: 50%;
   }
 }
